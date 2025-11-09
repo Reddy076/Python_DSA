@@ -1,5 +1,5 @@
 def duplicate(arr,n):
-    
+    # Kadane's Algorithm
     
     # brute force
     maxi = float('-inf')
@@ -16,6 +16,24 @@ def duplicate(arr,n):
             
     return maxi,start_idx,end_idx
     
+    # Kadane's Algorithm
+    
+    maxie=float("-inf")
+    sum=0
+    ans_start=-1
+    ans_end=-1
+    for i in range(n):
+        if sum==0:
+            start=i
+        sum+=arr[i]
+        if sum>maxie:
+            maxie=sum
+            ans_short,ans_end=start,i
+        if sum<0:
+            sum=0
+    if maxie<0:
+        maxie=0
+    return maxie,ans_short,ans_end
             
 
 if __name__ == "__main__":
