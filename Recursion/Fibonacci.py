@@ -116,3 +116,24 @@ Algorithm Explanation:
    
    Output: Fibonacci series up to 10: 0 1 1 2 3 5 8
 """
+
+
+
+
+def re(n,a=0,b=1,series=None):
+    if series is None:
+        series=[]
+    if a>n:
+        print(" ".join(map(str,series)))
+        return
+    series.append(a)
+    return re(n,b,a+b,series)
+        
+    
+    
+    
+    
+    
+n=5
+ans=re(n)
+print(ans)
